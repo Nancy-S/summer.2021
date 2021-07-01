@@ -1,95 +1,68 @@
-   <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <title>vadensdesigns.com</title>
-          <meta charset="UTF-8">
-          <meta name="description" content="Introduction to designing and making Web
-        sites">
-          <meta name="keywords" content="Web Design,HTML,CSS">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-          <link rel="stylesheet" href="canvasStyles.css"></head>
-          <h2>Canvas</h2>
-               <canvas id="myCanvas" width="300" height="300" style="border:3px solid
-        #d3d3d3;">
-               </canvas>
-        <canvas id="myCanvas2" width="1920" height="1080"
-        style="border:1px solid #d3d3d3;">
-        </canvas>
-               <script>
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
-        var c = document.getElementById("myCanvas");
- var ctx = c.getContext("2d");
-ctx.font = "20px helvetica";
-var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
-gradient.addColorStop("0", "green");
-gradient.addColorStop("0.5", "gray");
-gradient.addColorStop("1.0", "blue");
-//
-ctx.strokeStyle = gradient;
-ctx.strokeText("I LIKE TO DRAW", 100, 20);
-var c = document.getElementById('myCanvas');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Canvas Sample</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="canvasstyles.css" media="screen">
+</head>
+<body>
+  <div id="mainDiv">
+	<header>
+  	<h3>Canvas</h3>
+	</header>
+	
+	<section>
+  	<h4>My first canvas tag:</h4>
+  	<canvas id="myCanvas" width="300" height="320" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+  	<h4>My second canvas tag:</h4>
+  	<canvas id="myCanvas2" width="300" height="320" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<script>
+var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-    ctx.beginPath();
-    ctx.moveTo(0,260);
-    ctx.lineTo(380,260);
-       ctx.lineWidth = 30;
-    ctx.stroke();
-ctx.save();
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-ctx.moveTo(0,0);
-ctx.lineTo(400,325);
-ctx.stroke();
-    var c = document.getElementById('myCanvas');
-    var ctx = c.getContext("2d");
-    // Main face (big circle)
-    ctx.beginPath();
-    ctx.arc(150, 150, 100, 0, 2 * Math.PI);
-    ctx.fillStyle = "yellow";
-    ctx.fill();
-    ctx.stroke();
-    ctx.closePath();
-  
- // Smile
-   ctx.beginPath();
-   ctx.arc(150, 150, 75, 0, Math.PI);
-   ctx.lineWidth = 10;
-   ctx.stroke();
-   ctx.closePath();
-// Left eye
-   ctx.beginPath();
-   ctx.arc(110, 110, 20, 0, 2 * Math.PI);
-   ctx.fillStyle = "black";
-   ctx.lineWidth = 1;
-   ctx.fill();
-   ctx.stroke();
-   ctx.closePath();
-// Right eye
-   ctx.beginPath();
-   ctx.arc(185, 110, 20, 0, 2 * Math.PI);
-   ctx.fillStyle = "black";
-   ctx.fill();
-   ctx.stroke();
-   ctx.closePath();
-var c = document.getElementById('myCanvas2');
-   var ctx1 = c.getContext("2d");
-   ctx1.fillStyle = "lightgreen";
-   ctx1.fillRect(700, 400, 700, 400);
-   ctx1.rect(400, 300, 400, 300);
-   ctx1.lineWidth = 30;
-   ctx1.strokeStyle = "Grey";
-   ctx1.stroke();
+ctx.beginPath();
+ctx.rect(-50, 0, 400, 400);
+ctx.fillStyle = "#e219df";
+ctx.fill()
+ctx.beginPath();
+ctx.rect(10, 20, 150, 100);
+ctx.fillStyle = "#19e28d";
+ctx.fill();
+ctx.beginPath();
+ctx.rect(40, 60, 300, 100);
+ctx.fillStyle = "#3ce219";
+ctx.fill();
+ctx.beginPath();
+ctx.rect(-10, 100, 150, 300);
+ctx.fillStyle = "#d3e219";
+ctx.fill();
+ctx.beginPath();
+ctx.rect(80, 150, 150, 300);
+ctx.fillStyle = "#193ee2";
+ctx.fill();
+ctx.beginPath();
+ctx.rect(40, 200, 300, 100);
+ctx.fillStyle = "#e21919";
+ctx.fill();
+ var c2 = document.getElementById('myCanvas2');
+	var ctx2 = c2.getContext("2d");
+     	var canvas = document.getElementById('myCanvas2');
+     	var ctx2 = canvas.getContext('2d');
+     	ctx2.fillStyle = "#DDA698";
+     	ctx2.beginPath();
+    	 ctx2.arc(150, 150, 100, 25, Math.PI * 2, true); // Outer circle
+	ctx2.moveTo(210, 150);
+	ctx2.arc(150, 150, 70, 25, Math.PI, false); // Mouth (clockwise)
+	ctx2.moveTo(130, 130);
+	ctx2.arc(120, 130, 10, 5, Math.PI * 2, true); // Left eye
+	ctx2.moveTo(190, 130);
+	ctx2.arc(180, 130, 10, 5, Math.PI * 2, true); // Right eye
+	ctx2.stroke();
 
-var c = document.getElementById('myCanvas2');
-            var ctx1 = c.getContext("2d");
-            ctx1.fillStyle = "red";
-            ctx1.fillRect(500, 200, 600, 400);
-            ctx1.rect(100, 500, 200, 300);
-            ctx1.lineWidth = 15;
-            ctx1.strokeStyle = "blue";
-            ctx1.stroke();
-        </script>
-        </body>
-        </html>
+  	</script>
+ </section>
+  	
+</div>
+</body>
+</html>
