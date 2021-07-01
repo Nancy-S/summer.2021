@@ -1,50 +1,38 @@
-<!doctype html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <link rel="stylesheet" type="text/css" href="Samples.css">
-          <title>Questionnaire</title>
-</head>
-        <body>
-          <div id="mainDiv">
-            <script type="text/javascript">
-              var finalAnswer;
-              var displayName = prompt("Please enter your name?", "");
-              if ((displayName == "") || (displayName== null))
-              {
-                displayName = "You forgot your name.";
-              }
-else {
-                finalAnswer = displayName;
-              }
-                 var displayJob = prompt("What is your occupation?", "");
-              if ((displayJob == "") || (displayJob== null))
-{
-displayJob = "You forgot your occupation.";
-              }
-else {
-                finalAnswer = displayJob;
-              }
-                 var displayAddress = prompt("What is your address?", "");
-              if ((displayAddress == "") || (displayAddress== null))
-               {
-                displayAddress = "You forgot your address.";
-} else
-              {
-                finalAnswer = displayAddress;
-}
-do
-              {
-                document.write("Thank you for your information! You supplied this
-        information:" + "<br/>" + "<br/>" + displayName + "<br/>"  + displayJob + "<br/>" +
-        displayAddress);
-                finalNum--;
-              if (isNaN(finalAnswer))
-                {
-                  document.write("Oops, not enough information provided!");
-} }
-             while ( finalAnswer < null);
-            </script>
-          </div>
-        </body>
-        </html>
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p>Thank you for your information! You supplied this information:</p>
+<br>
+<p id ="key"></p>
+
+
+<script>
+	//declare an array of size 3
+	var details = new Array(3)
+    
+    //prompt the user for input
+	details[0] = prompt("Please enter your name", "Name");
+    details[1] = prompt("Please enter your Address", "Address");
+    details[2] = prompt("Please enter your occupation", "Occupation");
+    
+    //form a string with all details
+    var detail="";
+    var i;
+    
+    //concatente each string
+    //<br> is used to change line
+    for(i=0;i<details.length;i++)
+    	detail = detail + details[i] +"<br>"
+        
+    //write the details to the page using innerHtml
+    document.getElementById("key").innerHTML =detail;
+    
+
+
+</script>
+
+
+</body>
+</html>
